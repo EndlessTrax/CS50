@@ -2,7 +2,6 @@
 
 #include <stdio.h>
 
-
 int main(void)
 {
     // int height = get_int("How tall should the pyramid be?\n");
@@ -13,15 +12,18 @@ int main(void)
     int hashes = 1;
 
     // each level of the pyramid
-    for (int i = height; i > 0; i--){
+    for (int i = height; i > 0; i--)
+    {
         // calculate spaces needed
         int spaces = height - hashes;
 
         // print the correct number of hashes and spaces on left side
-        for (int s = 0; s < spaces; s++){
+        for (int s = 0; s < spaces; s++)
+        {
             printf(" ");
         }
-        for (int h = 0; h < hashes; h++){
+        for (int h = 0; h < hashes; h++)
+        {
             printf("#");
         }
 
@@ -29,10 +31,12 @@ int main(void)
         printf(" ");
 
         // print right side
-        for (int rh = 0; rh < hashes; rh++){
+        for (int rh = 0; rh < hashes; rh++)
+        {
             printf("#");
         }
-        for (int rs = 0; rs < spaces; rs++){
+        for (int rs = 0; rs < spaces; rs++)
+        {
             printf(" ");
         }
 
@@ -40,5 +44,4 @@ int main(void)
         printf("\n");
         hashes++;
     }
-
 }
