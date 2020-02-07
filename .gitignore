@@ -1,0 +1,5 @@
+#  IDE configs
+.vscode
+
+# Executables
+*.exe
