@@ -1,7 +1,8 @@
 # CS50 Course -- edX (Harvard)
 
-
 This repo contains the code I submitted as answers the the problem sets for the CS50 course. 
+
+Course details here: https://cs50.harvard.edu/x/2020/
 
 ### Assignments:
 
