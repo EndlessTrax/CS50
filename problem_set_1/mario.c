@@ -49,7 +49,7 @@ int main(void)
         // answer = get_int("How tall should the pyramid be? (Enter 1-8)\n");
 
         // Unable to use the above line as it uses a custom library function that is inbuilt to the CS50 IDE.
-        // `answer` is hardcoded instead for when running ourside of the CS50 environment.
+        // `answer` is hardcoded instead for when running outside of the CS50 environment.
 
         answer = 5
 
