@@ -4,7 +4,6 @@
 // Custom CS50 library with helper methods. Not available outside of CS50 IDE
 
 #include <stdio.h>
-#include <ctype.h>
 
 void make_pyramid(int height)
 {
