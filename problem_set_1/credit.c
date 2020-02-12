@@ -1,7 +1,7 @@
 // This is the answer file to the `credit` portion of the problem set: https://cs50.harvard.edu/x/2020/psets/1/
 // Sample CC numbers -- https://developer.paypal.com/docs/payflow/payflow-pro/payflow-pro-testing/#credit-card-numbers-for-testing
 
-#include <cs50.h>
+// #include <cs50.h> // Unable to use outside of CS50 IDE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -40,7 +40,9 @@ int check_sum(long card_num)
 
 int main(void)
 {
-    long credit_card = get_long("Credit card number: ");
+    // long credit_card = get_long("Credit card number: ");
+    // Unable to use `get_long` outside of the CS50 IDE. Hard coded CC for compiling outside env. 
+    long long credit_card = 4003600000000014;
 
     if (check_sum(credit_card) % 10 == 0)
     {
