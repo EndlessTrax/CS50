@@ -1,3 +1,5 @@
+// Problem set instructions: https://cs50.harvard.edu/x/2020/psets/2/substitution/
+
 #include <stdio.h>
 #include <cs50.h>
 #include <string.h>
