@@ -13,7 +13,9 @@ Course details here: https://cs50.harvard.edu/x/2020/
   - [Mario.c](./problem_set_1/mario.c)
   - [Credit.c](./problem_set_1/credit.c)
 
-- Problem Set 2 -- NOT YET COMPLETED
+- Problem Set 2 ([details](https://cs50.harvard.edu/x/2020/psets/2/))
+  - [Readability.c](./problem_set_2/readability.c)
+  - [Substitution.c](./problem_set_2/substitution.c)
 
 - Problem Set 3 -- NOT YET COMPLETED
 
