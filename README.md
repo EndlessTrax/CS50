@@ -17,7 +17,9 @@ Course details here: https://cs50.harvard.edu/x/2020/
   - [Readability.c](./problem_set_2/readability.c)
   - [Substitution.c](./problem_set_2/substitution.c)
 
-- Problem Set 3 -- NOT YET COMPLETED
+- Problem Set 3 -- ([details](https://cs50.harvard.edu/x/2020/psets/3/))
+  - [Plurality.c](./problem_set_3/plurality.c)
+  - [Runoff.c](./problem_set_3/runoff.c)
 
 - Problem Set 4 -- NOT YET COMPLETED
 
