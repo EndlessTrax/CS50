@@ -21,7 +21,9 @@ Course details here: https://cs50.harvard.edu/x/2020/
   - [Plurality.c](./problem_set_3/plurality.c)
   - [Runoff.c](./problem_set_3/runoff.c)
 
-- Problem Set 4 -- NOT YET COMPLETED
+- Problem Set 4 -- ([details](https://cs50.harvard.edu/x/2020/psets/4/))
+  - [Filter (helpers.c)](/problem_set_4/helpers.c)
+  - [Recover.c](/problem_set_4/recover.c)
 
 - Problem Set 5 -- NOT YET COMPLETED
 
