@@ -27,7 +27,9 @@ Course details here: https://cs50.harvard.edu/x/2020/
 
 - Problem Set 5 -- NOT YET COMPLETED
 
-- Problem Set 6 -- NOT YET COMPLETED
+- Problem Set 6 -- ([details](https://cs50.harvard.edu/x/2020/psets/6/))
+  - [Hello.py](/problem_set_6/hello.py)
+  - [Mario.py](/problem_set_6/mario.py)
 
 - Problem Set 7 -- NOT YET COMPLETED
 
