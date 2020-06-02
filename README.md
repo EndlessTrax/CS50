@@ -25,12 +25,15 @@ Course details here: https://cs50.harvard.edu/x/2020/
   - [Filter (helpers.c)](/problem_set_4/helpers.c)
   - [Recover.c](/problem_set_4/recover.c)
 
-- Problem Set 5 -- NOT YET COMPLETED
+- Problem Set 5 -- ([details](https://cs50.harvard.edu/x/2020/psets/5/))
+  - [Speller](/problem_set_5/speller/)
 
 - Problem Set 6 -- ([details](https://cs50.harvard.edu/x/2020/psets/6/))
   - [Hello.py](/problem_set_6/hello.py)
   - [Mario.py](/problem_set_6/mario.py)
-  - [credit.py](/problem_set_6/credit.py)
+  - [Credit.py](/problem_set_6/credit.py)
+  - [Readability](/problem_set_6/readability.py)
+  - [DNA]()
 
 - Problem Set 7 -- NOT YET COMPLETED
 
