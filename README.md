@@ -26,14 +26,14 @@ Course details here: https://cs50.harvard.edu/x/2020/
   - [Recover.c](/problem_set_4/recover.c)
 
 - Problem Set 5 -- ([details](https://cs50.harvard.edu/x/2020/psets/5/))
-  - [Speller](/problem_set_5/speller/)
+  - [Speller.c](/problem_set_5/speller/)
 
 - Problem Set 6 -- ([details](https://cs50.harvard.edu/x/2020/psets/6/))
   - [Hello.py](/problem_set_6/hello.py)
   - [Mario.py](/problem_set_6/mario.py)
   - [Credit.py](/problem_set_6/credit.py)
-  - [Readability](/problem_set_6/readability.py)
-  - [DNA]()
+  - [Readability.py](/problem_set_6/readability.py)
+  - [DNA.py](/problem_set_6/dna/dna.py)
 
 - Problem Set 7 -- NOT YET COMPLETED
 
