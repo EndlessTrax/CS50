@@ -35,10 +35,12 @@ Course details here: https://cs50.harvard.edu/x/2020/
   - [Readability.py](/problem_set_6/readability.py)
   - [DNA.py](/problem_set_6/dna/dna.py)
 
-- Problem Set 7 -- ([details](ttps://cs50.harvard.edu/x/2020/psets/7/))
+- Problem Set 7 -- ([details](https://cs50.harvard.edu/x/2020/psets/7/))
   - [Movies](problem_set_7/movies/movies/)
   - [Houses](problem_set_7/houses/houses/)
-  
-- Problem Set 8 -- NOT YET COMPLETED
+
+- Problem Set 8 -- ([details](https://cs50.harvard.edu/x/2020/tracks/web/))
+  - [Homepage](problem_set_8/homepage/)
+  - [Finance](problem_set_8/finance)
 
 - Final Assessment -- NOT YET COMPLETED
