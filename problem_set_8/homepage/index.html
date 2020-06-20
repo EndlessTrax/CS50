@@ -1,0 +1,72 @@
+<!-- 
+- Contain at least four different .html pages, at least one of which is index.html (the main page of your website), 
+    and it should be possible to get from any page on your website to any other page by following one or more hyperlinks.
+- Use at least ten (10) distinct HTML tags besides <html>, <head>, <body>, and <title>.
+- Integrate one or more features from Bootstrap into your site.
+- Have at least one stylesheet file of your own creation, styles.css, which uses at least five (5) selectors, and (5) properties
+- Integrate one or more features of JavaScript into your site
+- Ensure that your site looks nice on browsers both on mobile devices as well as laptops and desktops. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Dwarf Fan Site</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-red fixed-top">
+        <a class="navbar-brand ml-5" href="index.html">RED DWARF FAN SITE</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto mr-5">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cast.html">Cast</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="episodes.html">Episodes</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="hero-image">
+            <div id="homepage-hero">
+                <h1>Welcome to my Red Dwarf Fan Site</h1>
+                <div class="text-center mt-4">
+                    <a href="about.html">
+                        <button type="button" class="btn btn-lg btn-primary mx-1">About</button>
+                    </a>
+                    <a href="cast.html">
+                        <button type="button" class="btn btn-lg btn-primary mx-1">Cast</button>
+                    </a>
+                    <a href="episodes.html">
+                        <button type="button" class="btn btn-lg btn-primary mx-1">Episodes</button>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+    <footer class="container-fluid">
+        <p class="text-center m-0">Made for CS50 by Ricky White</p>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>    
+</body>
+</html>

@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.nav-item {
+    font-size: 1.2rem;
+}
+
+main {
+    flex: 1;
+}
+
+.bg-red {
+    background-color: darkred;
+}
+
+.hero-image {
+    background: linear-gradient(rgba(0,0,0,0.5), 
+            rgba(0,0,0,0.5)),
+            url(hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+#homepage-hero {
+    color: white;
+    text-shadow: 2px 2px red;
+    overflow: hidden;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    padding: 1.5em;
+    color: white;
+    background-color: #393939;
+}
