@@ -1,5 +1,9 @@
-#  IDE configs
+# IDE configs
 .vscode
 
 # Executables
 *.exe
+
+# Envs
+.env
+__pycache__
