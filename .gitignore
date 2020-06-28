@@ -7,3 +7,10 @@
 # Envs
 .env
 __pycache__
+
+# Flask Migration
+migrations/
+
+# Databases
+*.db
+*.sqlite
