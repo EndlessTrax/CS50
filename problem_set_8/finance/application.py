@@ -48,14 +48,4 @@ if not os.environ.get("API_KEY"):
     raise RuntimeError("API_KEY not set")
 
 
-class Users(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    password_hash = db.Column(db.String(120), nullable=False)
-    cash = db.Column(db.Integer, default=10000)
-
-    def __repr__(self):
-        return f'<User {self.username}>'
-
-
 from routes import *

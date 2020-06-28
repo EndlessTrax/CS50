@@ -3,7 +3,8 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 
 from helpers import apology, login_required, lookup, usd
-from application import app, db, session, Users
+from application import app, db, session
+from models import Users
 
 
 @app.route("/")
