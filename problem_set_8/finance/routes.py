@@ -1,10 +1,13 @@
+import os
+import requests
+
 from flask import flash, jsonify, redirect, render_template, request
 from werkzeug.security import check_password_hash, generate_password_hash
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 
 from helpers import apology, login_required, lookup, usd
 from application import app, db, session
-from models import Users
+from models import Users, Transaction
 
 
 @app.route("/")
@@ -18,7 +21,37 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    return apology("TODO")
+    if request.method == "POST":
+        symbol = request.form.get("symbol").lower()
+        shares = int(request.form.get("shares"))
+        
+        api_key = os.environ.get("API_KEY")
+        url = f"https://cloud-sse.iexapis.com/stable/stock/{symbol}/quote?token={api_key}"
+
+        r = requests.get(url)
+        res = r.json()
+        
+        if r.status_code != 200:
+            return apology("An error occured")
+
+        cost = res["latestPrice"] * shares
+        user = Users.query.filter_by(id=session["user_id"]).first()
+
+        if cost <= user.cash:
+            transaction = Transaction(
+                    user_id = user.id,
+                    symbol = symbol,
+                    price = res["latestPrice"],
+                    count = shares
+            )
+            db.session.commit(transaction)
+            db.session.close()
+            return redirect('/')
+        else:
+            return apology("Unable to complete transaction")
+    
+    else: # Method == GET
+        return render_template('buy.html')
 
 
 @app.route("/history")
@@ -82,7 +115,19 @@ def logout():
 @login_required
 def quote():
     """Get stock quote."""
-    return apology("TODO")
+    if request.method == "POST":
+        symbol = request.form.get("symbol").lower()
+        api_key = os.environ.get("API_KEY")
+        url = f"https://cloud-sse.iexapis.com/stable/stock/{symbol}/quote?token={api_key}"
+
+        try:
+            res = requests.get(url).json()
+            return render_template('quoted.html', data=res)
+        except:
+            return apology("Please enter a valid Symbol")
+
+    else:
+        return render_template('quote.html')
 
 
 @app.route("/register", methods=["GET", "POST"])
