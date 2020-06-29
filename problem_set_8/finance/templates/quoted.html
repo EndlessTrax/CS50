@@ -1,0 +1,8 @@
+{% extends 'layout.html' %} 
+{% block title %} Quote {% endblock %} 
+
+{% block main %}
+  <div>
+    <h3>A share of {{data.companyName}} ({{data.symbol}}) costs ${{data.latestPrice}}.</h3>
+  </div>
+{% endblock main %}
