@@ -33,7 +33,7 @@ def index():
             stocks.append([symbol.upper(), name, count, price, total])
             grand_total += float(total)
 
-    return render_template('index.html', stocks=stocks, cash=user.cash, total=round(grand_total+user.cash, 2))
+    return render_template('index.html', stocks=stocks, cash=round(user.cash, 2), total=round(grand_total+user.cash, 2))
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -194,7 +194,54 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    return apology("TODO")
+    if request.method == "POST":
+        symbol_id = request.form.get('symbol')
+        shares = int(request.form.get('shares'))
+
+        if symbol_id == None or shares == None:
+            return apology("Please fill in all fields")
+
+        user = Users.query.filter_by(id=session["user_id"]).first()
+        stock = Transaction.query.filter_by(id=symbol_id).first()
+
+        api_key = os.environ.get("API_KEY")
+        url = "https://cloud-sse.iexapis.com/stable/stock/{}/quote?token={}"
+        current_price = requests.get(url.format(stock.symbol, api_key)).json()["latestPrice"]
+
+        user.cash += current_price
+
+        if stock.count < shares:
+            return apology("You do not have that many stocks.")
+        elif stock.count == shares:
+            db.session.delete(stock)
+        else:
+            stock.count -= shares
+
+        # Add a sold transaction to the database for historical records.
+        sold_stock = Transaction(
+                user_id = user.id,
+                symbol = stock.symbol.upper(),
+                name = stock.name,
+                price = current_price,
+                count = shares,
+                sold = True
+        )
+
+        db.session.add(sold_stock)
+        db.session.commit()
+        db.session.close()
+
+        return redirect('/')
+    else:
+        user = Users.query.filter_by(id=session["user_id"]).first()
+        transactions = user.transactions
+
+        list_of_symbols = []
+
+        for stock in transactions:
+            list_of_symbols.append([stock.id, stock.symbol.upper()]) 
+
+        return render_template('sell.html', symbols=list_of_symbols)
 
 
 def errorhandler(e):
