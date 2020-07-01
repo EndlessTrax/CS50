@@ -245,6 +245,21 @@ def sell():
         return render_template('sell.html', symbols=list_of_symbols)
 
 
+@app.route("/deposit", methods=["GET", "POST"])
+@login_required
+def deposit():
+    """Deposit more cash to account"""
+    if request.method == "POST":
+        deposit_amount = int(request.form.get('amount'))
+        user = Users.query.filter_by(id=session["user_id"]).first()
+        user.cash += deposit_amount
+        db.session.commit()
+        db.session.close
+        return redirect('/')
+    else: 
+        return render_template('deposit.html')
+
+
 def errorhandler(e):
     """Handle error"""
     if not isinstance(e, HTTPException):
