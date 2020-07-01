@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+
+{% block main %}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Buy/Sell</th>
+            <th>Transacted</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in history %}
+            <tr>
+                <td>{{item.symbol}}</td>
+                <td>{{item.count}}</td>
+                <td>{{item.price}}</td>
+                {% if item.sold == True %}
+                    <td>SELL</td>
+                {% else %}
+                    <td>BUY</td>
+                {% endif %}
+                <td>{{item.date_time}}</td>
+            </tr>
+        {% endfor %}
+        
+    </tbody>
+</table>
+    
+{% endblock main %}
