@@ -1,19 +1,19 @@
 import os
 
 # from cs50 import SQL
-from flask import Flask, flash, jsonify, redirect, render_template, request, session
+from flask import Flask
 from flask_session import Session
 from tempfile import mkdtemp
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from dotenv import load_dotenv
 
-from helpers import apology, login_required, lookup, usd
+from helpers import usd
 
 # Configure application
 app = Flask(__name__)
 
-load_dotenv('.env_vars')
+load_dotenv(".env_vars")
 
 # SQL Alchemy
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///finance.db"
@@ -30,6 +30,7 @@ def after_request(response):
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
     return response
+
 
 # Custom filter
 app.jinja_env.filters["usd"] = usd
