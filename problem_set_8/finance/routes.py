@@ -14,7 +14,26 @@ from models import Users, Transaction
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return apology("TODO")
+    user = Users.query.filter_by(id=session["user_id"]).first()
+    api_key = os.environ.get("API_KEY")
+    url = "https://cloud-sse.iexapis.com/stable/stock/{}/quote?token={}"
+    transactions = user.transactions
+
+    stocks = list()
+    grand_total = float(0)
+
+    for stock in transactions:
+        if stock.sold == False:
+            symbol = stock.symbol
+            name = stock.name
+            count = stock.count
+            price = requests.get(url.format(symbol, api_key)).json()["latestPrice"]
+            total = '{:.2f}'.format(price * count)
+
+            stocks.append([symbol.upper(), name, count, price, total])
+            grand_total += float(total)
+
+    return render_template('index.html', stocks=stocks, cash=user.cash, total=round(grand_total+user.cash, 2))
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -40,11 +59,16 @@ def buy():
         if cost <= user.cash:
             transaction = Transaction(
                     user_id = user.id,
-                    symbol = symbol,
+                    symbol = symbol.upper(),
+                    name = res["companyName"],
                     price = res["latestPrice"],
                     count = shares
             )
-            db.session.commit(transaction)
+
+            user.cash = user.cash - (res["latestPrice"] * shares)
+
+            db.session.add(transaction)
+            db.session.commit()
             db.session.close()
             return redirect('/')
         else:

@@ -19,6 +19,7 @@ class Transaction(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     symbol = db.Column(db.String(10), nullable=False)
+    name = db.Column(db.String(80))
     price = db.Column(db.Integer, nullable=False)
     count = db.Column(db.Integer, nullable=False)
     sold = db.Column(db.Boolean, default=False)
