@@ -9,7 +9,7 @@ class Users(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     password_hash = db.Column(db.String(120), nullable=False)
     cash = db.Column(db.Integer, default=10000)
-    transactions = db.relationship('Transaction', backref='user', lazy=True)
+    transactions = db.relationship("Transaction", backref="user", lazy=True)
 
     def __repr__(self):
         return f"<User {self.username}>"
@@ -17,7 +17,7 @@ class Users(db.Model):
 
 class Transaction(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     symbol = db.Column(db.String(10), nullable=False)
     name = db.Column(db.String(80))
     price = db.Column(db.Integer, nullable=False)
