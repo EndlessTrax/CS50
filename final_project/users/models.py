@@ -7,6 +7,8 @@ from trees.models import Tree
 
 # Custom User Model
 class CustomUser(AbstractUser):
+    avatar = models.ImageField(upload_to=f'avatars/{id}', blank=True, null=True)
+    display_name = models.CharField(max_length=20, blank=True, null=True)
     transactions = models.ForeignKey('Transaction', on_delete=models.DO_NOTHING, null=True)
 
     def __str__(self):
