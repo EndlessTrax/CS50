@@ -13,11 +13,13 @@ class Tree(models.Model):
     location = models.CharField(max_length=2, choices=LOCATION_CHOICES)
     price = models.PositiveIntegerField()
     created = models.DateTimeField(auto_now_add=True)
-    last_updated =models.DateTimeField(auto_now=True)
+    last_updated = models.DateTimeField(auto_now=True)
+    picture = models.ImageField(upload_to=f'trees/{id}')
+
+    # TODO: Add image field
 
     def __str__(self):
         return f"{self.id}: {self.name}"
 
     class Meta:
         ordering = ['-created']
-
