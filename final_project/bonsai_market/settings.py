@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # My apps
-    'trees'
+    'users.apps.UsersConfig',
+    'trees.apps.TreeConfig',
 ]
 
 MIDDLEWARE = [
@@ -86,6 +87,9 @@ DATABASES = {
     }
 }
 
+# Custom User Model
+
+AUTH_USER_MODEL = 'users.CustomUser'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
