@@ -1,8 +1,8 @@
 from .models import Tree
 
 
-def test_tree_creation():
-    tree = Tree(
+def test_tree_creation(db):
+    tree = Tree.objects.create(
         name="Old Juniper",
         species="Juniper",
         description="This is an old tree",
