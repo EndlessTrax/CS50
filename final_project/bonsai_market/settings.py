@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     
     # My apps
     'users.apps.UsersConfig',
-    'trees.apps.TreeConfig',
+    'trees.apps.TreesConfig',
 ]
 
 MIDDLEWARE = [
