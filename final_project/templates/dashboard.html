@@ -2,7 +2,44 @@
 
 
 {% block content %}
-  <h1>This is the dashboard</h1>
+
+<div class="row mt-5 text-center">
+  <div class="col">
+    <h1>Welcome back, SOMENAME</h1> <!-- Display name or username -->
+    <small>Edit Profile</small>
+  </div>
+</div>
+
+
+<div class="row mt-5">
+  <div class="col-12">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Tree</th>
+          <th scope="col">Bought / Sold</th>
+          <th scope="col">Date</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead> 
+      <tbody>
+        <tr class="table-info">
+          <td>Juniper</td>
+          <td>Bought</td>
+          <td>7/8/20</td>
+          <td>$150</td>
+        </tr>
+        <tr class="table-success">
+          <td>Blask Pine</td>
+          <td>Sold</td>
+          <td>7/7/20</td>
+          <td>$200</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 {% endblock content %}
 
 
