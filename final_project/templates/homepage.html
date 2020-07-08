@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>It works!</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="row mt-5">
+        <div class="col-12">
+            <h1>Welcome to the Bonsai Marketplace</h1>
+        </div>
+        <div class="col-12 mt-3">
+            <p>Please Log in (or create an account) to continue</p>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-success mx-1">Log In</button>
+            <button type="submit" class="btn btn-primary mx-1">Sign Up</button>
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block scripts %}
+{% endblock scripts %}
