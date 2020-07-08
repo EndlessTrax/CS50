@@ -15,34 +15,38 @@
     />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 
     <title>Bonsai Marketplace</title>
   </head>
   <body>
     <nav class="container">
-        <ul class="nav justify-content-end">
-            <li class="nav-item mr-auto">
-              <a class="navbar-brand" href="{% url 'homepage' %}">BONSAI MARKETPLACE</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'marketplace' %}">Marketplace</a> <!-- TODO: Add Active States -->
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
-            </li>
-          </ul>
+      <ul class="nav justify-content-end">
+        <li class="nav-item mr-auto">
+          <a class="navbar-brand" href="{% url 'homepage' %}">BONSAI MARKETPLACE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'marketplace' %}">Marketplace</a>
+          <!-- TODO: Add Active States -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+        </li>
+      </ul>
     </nav>
 
     <main class="container">
-        {% block content %}{% endblock content %}
+      {% block content %}{% endblock content %}
     </main>
 
     <footer>
       <div class="container">
         <div class="row">
           <div class="col">
-            <p class="text-center">CS50 Final Project by Ricky White</p>
+            <p class="text-center">
+              <a href="https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/">CS50</a>
+              Final Project by <a href="https://github.com/endlesstrax">Ricky White</a>
+            </p>
           </div>
         </div>
       </div>
