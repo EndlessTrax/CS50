@@ -23,13 +23,13 @@
     <nav class="container">
         <ul class="nav justify-content-end">
             <li class="nav-item mr-auto">
-              <a class="navbar-brand" href="#">BONSAI MARKETPLACE</a>
+              <a class="navbar-brand" href="{% url 'homepage' %}">BONSAI MARKETPLACE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Marketplace</a> <!-- TODO: Add Active States -->
+              <a class="nav-link" href="{% url 'marketplace' %}">Marketplace</a> <!-- TODO: Add Active States -->
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Dashboard</a>
+              <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
             </li>
           </ul>
     </nav>

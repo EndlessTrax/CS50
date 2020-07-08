@@ -1,3 +1,10 @@
-from django.shortcuts import render
+# from django.shortcuts import render
+from django.views.generic import TemplateView
 
-# Create your views here.
+
+class DashboardPageView(TemplateView):
+    template_name = 'dashboard.html'
+
+
+class ProfilePageView(TemplateView):
+    template_name = 'profile.html'
