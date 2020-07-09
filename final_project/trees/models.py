@@ -14,9 +14,8 @@ class Tree(models.Model):
     price = models.PositiveIntegerField()
     created = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
-    picture = models.ImageField(upload_to=f'trees/{id}')
+    picture = models.ImageField(upload_to='trees/')
 
-    # TODO: Add image field
 
     def __str__(self):
         return f"{self.id}: {self.name}"
