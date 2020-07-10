@@ -10,8 +10,12 @@
             <p>Please Log in (or create an account) to continue</p>
         </div>
         <div class="col-12">
-            <button type="submit" class="btn btn-success mx-1">Log In</button>
-            <button type="submit" class="btn btn-primary mx-1">Sign Up</button>
+            <a href="{% url 'login' %}">
+                <button type="submit" class="btn btn-success mx-1">Log In</button>
+            </a>
+            <a href="{% url 'signup' %}">
+                <button type="submit" class="btn btn-primary mx-1">Sign Up</button>
+            </a>
         </div>
     </div>
 {% endblock content %}
