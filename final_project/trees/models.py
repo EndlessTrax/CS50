@@ -15,6 +15,7 @@ class Tree(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
     picture = models.ImageField(upload_to='trees/')
+    sold = models.BooleanField(default=False)
 
 
     def __str__(self):
