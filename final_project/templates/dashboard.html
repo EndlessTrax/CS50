@@ -3,16 +3,48 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
+  
 <div class="row mt-5 text-center">
   <div class="col">
-    <h1>Welcome back, SOMENAME</h1> <!-- Display name or username -->
-    <small>Edit Profile</small>
+    <h1>Welcome back, {{ user.username }}</h1> <!-- Display name or username -->
+    <small>
+      <a href="{% url 'profile' %}">Edit Profile</a>
+    </small>
   </div>
 </div>
 
+<section class="row mt-3">
+  <div class="col-12 text-right">
+    <button type="button" class="btn btn-lg btn-info">Sell Tree</button>
+  </div>
+</section>
 
-<div class="row mt-5">
+<section class="row">
   <div class="col-12">
+    <h2>Trees you're selling</h2>
+    <table class="table table-striped">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Tree</th>
+          <th scope="col">Date</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead> 
+      <tbody>
+        <tr>
+          <td>Juniper</td>
+          <td>7/8/20</td>
+          <td>$150</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="row mt-3">
+  <div class="col-12">
+    <h2>Transactions</h2>
     <table class="table">
       <thead class="thead-light">
         <tr>
@@ -38,10 +70,8 @@
       </tbody>
     </table>
   </div>
-</div>
+</section>
+
+{% endif %}
 
 {% endblock content %}
-
-
-{% block scripts %}
-{% endblock scripts %}
