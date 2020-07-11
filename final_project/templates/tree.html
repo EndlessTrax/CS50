@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+
+{% load crispy_forms_tags %} 
+{% block content %}
+
+<div class="row mt-5">
+  <div class="col text-center">
+    <h1>Sell a New Tree</h1>
+  </div>
+</div>
+
+<section class="row mb-3">
+  <div class="col-8 offset-2">
+    <form action="" method="post">
+      {% csrf_token %}
+
+      <div class="text-right">
+        <small>* All fields must be completed</small>
+      </div>
+
+      {{ form | crispy}}
+    
+    </form>
+  </div>
+</section>
+
+{% endblock content %}
