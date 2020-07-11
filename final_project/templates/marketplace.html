@@ -14,7 +14,9 @@
         {% if tree.sold == False %}
           <div class="col mb-4">
             <div class="card">
-              <img src="{{ tree.picture.url }}" class="card-img-top" alt="...">
+              <a href="{% url 'single_tree' tree.pk %}">
+                <img src="{{ tree.picture.url }}" class="card-img-top" alt="{{ tree.name }}">
+              </a>
               <div class="card-body">
                 <h5 class="card-title">{{ tree.name }}</h5>
                 <p class="card-text">{{ tree.description }}</p>
