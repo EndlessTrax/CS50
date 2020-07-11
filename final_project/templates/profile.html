@@ -1,22 +1,38 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
+{% load crispy_forms_tags %} 
 
-{% block content %}
+{% block content %} 
 
-<div class="row mt-5">
+{% if user.is_authenticated %}
+<section class="row mt-5 mb-3">
   <div class="col-12">
-    <img src="" alt="">
+    {% if user.avatar %}
+    <img src="{{ user.avatar.url }}" alt="" />
+    {% endif %}
   </div>
   <div class="col-12">
-    <h2>USERNAME</h2>
+    <h2>Hi, {{ user.username }}</h2>
   </div>
+  {% if user.display_name %}
   <div class="col-12">
-    <h3>DISPLAY NAME</h3>
+    <p>Display name: {{ user.display_name }}</p>
   </div>
-</div>
+  {% endif %}
+</section>
+
+<hr>
+
+<section class="row mt-4">
+  <div class="col-8 offest-2">
+    <h2>Update Profile</h2>
+    <form method="POST" action="">
+      {% csrf_token %} 
+      {{ form | crispy }}
+      <button type="submit" class="btn btn-info">Update</button>
+    </form>
+  </div>
+</section>
+{% endif %} 
 
 {% endblock content %}
-
-
-{% block scripts %}
-{% endblock scripts %}
