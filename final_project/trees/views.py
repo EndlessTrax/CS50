@@ -18,4 +18,4 @@ class MarketplacePageView(ListView):
 class AddTreePageView(CreateView):
     form_class = TreeCreationForm
     success_url = reverse_lazy("dashboard")
-    template_name = "tree.html"
+    template_name = "new_tree.html"
