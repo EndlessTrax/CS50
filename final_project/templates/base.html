@@ -26,19 +26,19 @@
           <a class="navbar-brand" href="{% url 'homepage' %}">BONSAI MARKETPLACE</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'marketplace' %}">Marketplace</a>
+          <a class="nav-link underline-link" href="{% url 'marketplace' %}">Marketplace</a>
           <!-- TODO: Add Active States -->
         </li>
         {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+            <a class="nav-link underline-link" href="{% url 'dashboard' %}">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+            <a class="nav-link underline-link" href="{% url 'logout' %}">Log Out</a>
           </li>
         {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+            <a class="nav-link underline-link" href="{% url 'login' %}">Log In</a>
           </li>
         {% endif %}
 

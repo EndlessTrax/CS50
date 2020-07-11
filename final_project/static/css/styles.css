@@ -2,6 +2,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica,
+    Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
 }
 
 main {
@@ -15,11 +17,26 @@ footer {
 }
 
 footer a {
-  color: #ccc
+  color: #ccc;
 }
 
-footer a:hover, 
+footer a:hover,
 footer a:focus,
 footer a::selection {
   color: green;
+}
+
+nav ul li a {
+  color: green;
+  font-size: 1.2rem;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  color: darkgreen;
+}
+
+.underline-link:hover,
+.underline-link:focus {
+  text-decoration: underline !important;
 }
