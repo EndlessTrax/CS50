@@ -6,16 +6,26 @@
 
 {% if user.is_authenticated %}
 
-<section class="row my-5">
-  <div class="col-8 offset-2">
-    <h2>Update Tree</h2>
-    <form method="POST" action="">
-      {% csrf_token %} 
-      {{ form | crispy }}
-      <button type="submit" class="btn btn-block btn-info mt-3">Update</button>
-    </form>
-  </div>
-</section>
-{% endif %} 
+  {% if object.sold == False %}
+    <section class="row my-5">
+      <div class="col-8 offset-2">
+        <h2>Update Tree</h2>
+        <form method="POST" action="">
+          {% csrf_token %} 
+          {{ form | crispy }}
+          <button type="submit" class="btn btn-block btn-info mt-3">Update</button>
+        </form>
+      </div>
+    </section>
+    
+  {% else %}
+  <section class="row my-5">
+    <div class="col-8 offset-2">
+      <h3>This tree ahs already been sold and cannot be editied.</h3>
+    </div>
+  </section>
+  {% endif %}
+
+  {% endif %} 
 
 {% endblock content %}
