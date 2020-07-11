@@ -42,10 +42,9 @@ nav ul li a:focus {
 }
 
 #tree-card {
-  /* border: 1px solid green; */
   border-radius: 5%;
   padding: 2em;
-  box-shadow: 5px 5px 20px rgba(0,0,0, 0.2);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 #tree-card img {
