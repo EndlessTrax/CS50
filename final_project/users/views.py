@@ -1,4 +1,5 @@
 # from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView, CreateView
 from django.urls import reverse_lazy
 
@@ -11,9 +12,9 @@ class SignUpView(CreateView):
     template_name = "registration/signup.html"
 
 
-class DashboardPageView(TemplateView):
+class DashboardPageView(TemplateView, LoginRequiredMixin):
     template_name = "dashboard.html"
 
 
-class ProfilePageView(TemplateView):
+class ProfilePageView(TemplateView, LoginRequiredMixin):
     template_name = "profile.html"
