@@ -40,3 +40,18 @@ nav ul li a:focus {
 .underline-link:focus {
   text-decoration: underline !important;
 }
+
+#tree-card {
+  /* border: 1px solid green; */
+  border-radius: 5%;
+  padding: 2em;
+  box-shadow: 5px 5px 20px rgba(0,0,0, 0.2);
+}
+
+#tree-card img {
+  border-radius: 1rem;
+}
+
+#tree-desc {
+  font-size: 1.2rem;
+}
