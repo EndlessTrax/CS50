@@ -9,7 +9,7 @@
   <div class="col">
     <h1>Welcome back, {{ user.username }}</h1> <!-- Display name or username -->
     <small>
-      <a href="{% url 'profile' %}">Edit Profile</a>
+      <a href="{% url 'profile' user.pk %}">Edit Profile</a>
     </small>
   </div>
 </div>
