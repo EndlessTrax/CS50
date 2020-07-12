@@ -13,9 +13,14 @@
       <p id="tree-desc">
         {{ object.description }}
       </p>
-      <p><b>Location:</b> {{ state }}</p>  
+      <p><b>Location:</b> {{ state }}</p> 
+      
+      {% if object.owner_id != user.pk %}
+          <a href="{% url 'buy_tree' object.pk %}">
+            <button type="button" class="btn btn-success">Buy Tree</button>
+          </a>
+      {% endif %}
     </div>
-    
   </div>
 </section>  
 {% endblock content %}
