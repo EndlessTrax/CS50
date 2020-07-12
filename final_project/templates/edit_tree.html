@@ -15,13 +15,17 @@
           {{ form | crispy }}
           <button type="submit" class="btn btn-block btn-info mt-3">Update</button>
         </form>
+        <a href="{% url 'delete_tree' object.pk %}">
+          <button type="button" class="btn btn-danger mt-3">Delete</button>
+        </a>
+      
       </div>
     </section>
     
   {% else %}
   <section class="row my-5">
     <div class="col-8 offset-2">
-      <h3>This tree ahs already been sold and cannot be editied.</h3>
+      <h3>This tree has already been sold and cannot be editied.</h3>
     </div>
   </section>
   {% endif %}

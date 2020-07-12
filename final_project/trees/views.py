@@ -1,6 +1,13 @@
 # from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views.generic import TemplateView, CreateView, ListView, DetailView, UpdateView
+from django.views.generic import (
+    TemplateView,
+    CreateView,
+    ListView,
+    DetailView,
+    UpdateView,
+    DeleteView,
+)
 from django.urls import reverse_lazy
 
 
@@ -10,11 +17,11 @@ from .locations import LOCATION_CHOICES
 
 
 class HomePageView(TemplateView):
-    template_name = 'homepage.html'
+    template_name = "homepage.html"
 
 
 class MarketplacePageView(ListView):
-    template_name = 'marketplace.html'
+    template_name = "marketplace.html"
     model = Tree
 
 
@@ -41,10 +48,16 @@ class SingleTreePageView(DetailView):
 
 
 class EditTreePageView(UpdateView, LoginRequiredMixin, UserPassesTestMixin):
-    template_name = 'edit_tree.html'
+    template_name = "edit_tree.html"
     login_url = "login"
     model = Tree
     fields = ("name", "species", "description", "location", "price", "picture")
 
     def get_success_url(self):
-        return reverse_lazy('dashboard')
+        return reverse_lazy("dashboard")
+
+
+class DeleteTreePageView(DeleteView):
+    template_name = "delete_tree.html"
+    model = Tree
+    success_url = reverse_lazy("dashboard")
