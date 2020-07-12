@@ -1,7 +1,8 @@
+from django.conf import settings
 from django.db import models
 
 from .locations import LOCATION_CHOICES
-
+from users.models import CustomUser
 
 # Tree Model
 class Tree(models.Model):
@@ -14,7 +15,7 @@ class Tree(models.Model):
     last_updated = models.DateTimeField(auto_now=True)
     picture = models.ImageField(upload_to='trees/')
     sold = models.BooleanField(default=False)
-
+    owner_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=False)
 
     def __str__(self):
         return f"{self.id}: {self.name}"
