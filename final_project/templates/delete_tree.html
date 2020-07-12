@@ -1,16 +1,16 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
 {% block content %}
-  <div class="row">
-    <div class="col-8 offset-2">    
-      <form method="post">
-        {% csrf_token %}
-        <p>Are you sure you want to delete <b>{{ object.name }}</b> from the marketplace?</p>
-        <button type="submit" class="btn btn-danger">Yes, delete</button>
-        <a href="{% url 'dashboard' %}">
-          <button type="button" class="btn btn-warning">No, keep my tree!</button>
-        </a>
+<div class="row">
+  <div class="col-8 offset-2">
+    <form method="post">
+      {% csrf_token %}
+      <p>Are you sure you want to delete <b>{{ object.name }}</b> from the marketplace?</p>
+      <button type="submit" class="btn btn-danger">Yes, delete</button>
+      <a href="{% url 'dashboard' %}">
+        <button type="button" class="btn btn-warning">No, keep my tree!</button>
+      </a>
     </form>
-    </div>
   </div>
+</div>
 {% endblock content %}
