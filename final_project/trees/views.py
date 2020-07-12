@@ -9,11 +9,13 @@ from django.views.generic import (
     DeleteView,
 )
 from django.urls import reverse_lazy
+from django.http.response import HttpResponseRedirect
 
 
 from .models import Tree
 from .forms import TreeCreationForm
 from .locations import LOCATION_CHOICES
+from users.models import Transaction
 
 
 class HomePageView(TemplateView):
@@ -61,3 +63,27 @@ class DeleteTreePageView(DeleteView):
     template_name = "delete_tree.html"
     model = Tree
     success_url = reverse_lazy("dashboard")
+
+
+class BuyTreePageView(TemplateView):
+    template_name = "buy_tree_confirm.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        tree = Tree.objects.get(id=self.kwargs['pk'])
+        context['tree'] = tree
+        return context
+
+    def post(self, request, *args, **kwargs):
+        new_transaction = Transaction(
+            user_id = request.user.id,
+            tree_id = self.kwargs['pk'],
+            bought = True
+        )
+        new_transaction.save()
+
+        tree = Tree.objects.get(id=self.kwargs['pk'])
+        tree.sold = True
+        tree.save()
+
+        return HttpResponseRedirect(reverse_lazy("dashboard"))
