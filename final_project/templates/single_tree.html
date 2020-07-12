@@ -9,10 +9,11 @@
       <h1 class="text-center mb-3">
         {{ object.name }} — ${{ object.price }}
       </h1>
+      <img src="{{ object.picture.url }}" alt="{{ object.name }}" class="img-fluid">
       <p id="tree-desc">
         {{ object.description }}
-      </p>  
-      <img src="{{ object.picture.url }}" alt="{{ object.name }}" class="img-fluid">
+      </p>
+      <p><b>Location:</b> {{ state }}</p>  
     </div>
     
   </div>

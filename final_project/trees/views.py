@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 
 from .models import Tree
 from .forms import TreeCreationForm
+from .locations import LOCATION_CHOICES
 
 
 class HomePageView(TemplateView):
@@ -26,6 +27,17 @@ class AddTreePageView(CreateView, LoginRequiredMixin):
 class SingleTreePageView(DetailView):
     template_name = "single_tree.html"
     model = Tree
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        state_code = self.object.location
+
+        for state in LOCATION_CHOICES:
+            if state[0] == state_code:
+                context["state"] = state[1]
+
+        return context
 
 
 class EditTreePageView(UpdateView, LoginRequiredMixin, UserPassesTestMixin):
