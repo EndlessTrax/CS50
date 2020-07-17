@@ -5,9 +5,11 @@ from django.db import models
 
 # Custom User Model
 class CustomUser(AbstractUser):
-    avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
+    avatar = models.ImageField(upload_to="avatars/", blank=True, null=True)
     display_name = models.CharField(max_length=20, blank=True, null=True)
-    transactions = models.ForeignKey('Transaction', on_delete=models.DO_NOTHING, null=True)
+    transactions = models.ForeignKey(
+        "Transaction", on_delete=models.DO_NOTHING, null=True
+    )
 
     def __str__(self):
         return self.username
@@ -22,7 +24,7 @@ class Transaction(models.Model):
     date_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
     class Meta:
-        ordering = ['-date_time']
+        ordering = ["-date_time"]
