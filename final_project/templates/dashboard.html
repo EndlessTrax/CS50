@@ -31,14 +31,18 @@
           <th scope="col">Tree</th>
           <th scope="col">Description</th>
           <th scope="col">Price</th>
+          <th scope="col">Edit</th>
         </tr>
       </thead> 
       <tbody>
-        <tr>
-          <td>Juniper</td>
-          <td>Blah blah blah</td>
-          <td>$150</td>
-        </tr>
+        {% for tree in trees_for_sale %}
+          <tr>
+            <td>{{tree.name}}</td>
+            <td>{{tree.description}}</td>
+            <td>{{tree.price}}</td>
+            <td><a href="{% url 'edit_tree' tree.pk %}">Edit</a></td>
+          </tr>
+        {% endfor %}
       </tbody>
     </table>
   </div>
@@ -57,18 +61,18 @@
         </tr>
       </thead> 
       <tbody>
-        <tr class="table-info">
-          <td>Juniper</td>
-          <td>Bought</td>
-          <td>7/8/20</td>
-          <td>$150</td>
-        </tr>
-        <tr class="table-success">
-          <td>Blask Pine</td>
-          <td>Sold</td>
-          <td>7/7/20</td>
-          <td>$200</td>
-        </tr>
+        {% for transaction in transactions %}
+          {% if transaction.sale == 'Sold' %}
+            <tr class="table-success">
+          {% else %}
+            <tr class="table-info">
+          {% endif %}
+              <td>{{ transaction.tree_name}}</td>
+              <td>{{ transaction.sale }}</td>
+              <td>{{ transaction.date }}</td>
+              <td>{{ transaction.price }}</td>
+            </tr>
+        {% endfor %}
       </tbody>
     </table>
   </div>
