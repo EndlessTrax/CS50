@@ -2,25 +2,39 @@
 
 
 {% block content %}
-<section class="row my-5">
-  <div class="col-8 offset-2">
 
-    <div id="tree-card">
-      <h1 class="text-center mb-3">
-        {{ object.name }} — ${{ object.price }}
-      </h1>
-      <img src="{{ object.picture.url }}" alt="{{ object.name }}" class="img-fluid">
-      <p id="tree-desc">
-        {{ object.description }}
-      </p>
-      <p><b>Location:</b> {{ state }}</p> 
-      
-      {% if object.owner_id.id != user.id %}
-          <a href="{% url 'buy_tree' object.pk %}">
-            <button type="button" class="btn btn-success">Buy Tree</button>
-          </a>
-      {% endif %}
+{% if object.sold == True %}
+
+  <section class="row my-5">
+    <div class="col-8 offset-2">
+      <h1 class="text-center">This tree has already been sold. Sorry!</h1>
     </div>
-  </div>
-</section>  
+  </section>
+  
+{% else %}
+
+  <section class="row my-5">
+    <div class="col-8 offset-2">
+
+      <div id="tree-card">
+        <h1 class="text-center mb-3">
+          {{ object.name }} — ${{ object.price }}
+        </h1>
+        <img src="{{ object.picture.url }}" alt="{{ object.name }}" class="img-fluid">
+        <p id="tree-desc">
+          {{ object.description }}
+        </p>
+        <p><b>Location:</b> {{ state }}</p> 
+        
+        {% if object.owner_id.id != user.id %}
+            <a href="{% url 'buy_tree' object.pk %}">
+              <button type="button" class="btn btn-success">Buy Tree</button>
+            </a>
+        {% endif %}
+      </div>
+    </div>
+  </section>  
+
+{% endif %}
+
 {% endblock content %}
