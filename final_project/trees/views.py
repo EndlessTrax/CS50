@@ -29,8 +29,14 @@ class MarketplacePageView(ListView):
 
 class AddTreePageView(CreateView, LoginRequiredMixin):
     form_class = TreeCreationForm
+    model = Tree
     success_url = reverse_lazy("dashboard")
     template_name = "new_tree.html"
+
+    def form_valid(self, form):
+        form.instance.owner_id = self.request.user
+        return super().form_valid(form)
+
 
 
 class SingleTreePageView(DetailView):
