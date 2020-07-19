@@ -1,11 +1,9 @@
-from typing import cast
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
 # Custom User Model
 class CustomUser(AbstractUser):
-    avatar = models.ImageField(upload_to="avatars/", blank=True, null=True)
     display_name = models.CharField(max_length=20, blank=True, null=True)
     transactions = models.ForeignKey(
         "Transaction", on_delete=models.DO_NOTHING, null=True

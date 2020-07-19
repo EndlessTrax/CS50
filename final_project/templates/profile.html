@@ -7,11 +7,6 @@
 {% if user.is_authenticated %}
 <section class="row mt-5 mb-3">
   <div class="col-12">
-    {% if user.avatar %}
-    <img src="{{ user.avatar.url }}" alt="" />
-    {% endif %}
-  </div>
-  <div class="col-12">
     <h2>Hi, {{ user.username }}</h2>
   </div>
   {% if user.display_name %}
