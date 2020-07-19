@@ -25,7 +25,8 @@
           {{ object.description }}
         </p>
         <p><b>Location:</b> {{ state }}</p> 
-        
+        <p><b>Sold by:</b> {{ object.owner_id.username }}</p> 
+
         {% if object.owner_id.id != user.id %}
             <a href="{% url 'buy_tree' object.pk %}">
               <button type="button" class="btn btn-success">Buy Tree</button>
