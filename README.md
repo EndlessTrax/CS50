@@ -43,4 +43,5 @@ Course details here: https://cs50.harvard.edu/x/2020/
   - [Homepage](problem_set_8/homepage/)
   - [Finance](problem_set_8/finance)
 
-- Final Assessment -- NOT YET COMPLETED
+- Final Assessment -- ([details](https://cs50.harvard.edu/x/2020/project/))
+  - [Bonsai Marketplace](final_project/)
